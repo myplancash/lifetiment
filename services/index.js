@@ -1,3 +1,4 @@
+import { graphql } from 'graphql';
 import { request, gql } from 'graphql-request'
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
@@ -7,19 +8,20 @@ export const getPosts = async () => {
     query MyQuery {
       postsConnection {
         edges {
+          cursor
           node {
             author {
               bio
-              id
               name
+              id
               photo {
                 url
               }
             }
             createdAt
-            excerpt
             slug
             title
+            excerpt
             featuredImage {
               url
             }
@@ -31,11 +33,45 @@ export const getPosts = async () => {
         }
       }
     }
-  `
+  `;
 
   const result = await request(graphqlAPI, query);
 
   return result.postsConnection.edges;
+}
+
+
+export const getPostDetails = async (slug) => {
+  const query = gql`
+    query GetPostDetails($slug: String!) {
+      post(where: {slug: $slug}) {
+        title
+        excerpt
+        featuredImage {
+          url
+        }
+        author{
+          name
+          bio
+          photo {
+            url
+          }
+        }
+        createdAt
+        slug
+        content {
+          raw
+        }
+        categories {
+          name
+          slug
+        }
+      }
+    }
+  `
+
+  const result = await request(graphqlAPI, query, { slug });
+  return result.post;
 }
 
 export const getRecentPosts = async () => {
@@ -58,7 +94,7 @@ export const getRecentPosts = async () => {
   return result.posts;
 }
 
-export const getSimilarPosts = async () => {
+export const getSimilarPosts = async (slug, categories) => {
   const query = gql`
      query GetPostDetails($slug: String!, $categories: [String!]) {
       posts(
@@ -82,7 +118,7 @@ export const getCategories = async () => {
   const query = gql`
     query GetCategories {
       categories {
-        name,
+        name
         slug
       }
     }

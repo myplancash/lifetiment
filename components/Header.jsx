@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import { ReactComponent as Logo } from '../public/logo.svg';
+import React, { useState, useEffect } from 'react';
+import { getCategories } from '../services';
 
-const categories = [
+// hardcoding categories 
+/* const categories = [
   {
     name: 'Money Patterns', 
     slug: 'money-patterns'
@@ -10,14 +12,22 @@ const categories = [
     slug: 'life-patterns'
   },
 ]
+ */
 
 const Header = () => {
+  const [ categories, setCategories ] = useState([])
+
+  useEffect(() => {
+    getCategories().then((newCategories) => setCategories(newCategories))
+  }, [])
+
+
   return (
     <div className="container mx-auto mb-8 px-10">
       <div className="border-b w-full inline-block border-blue-400 py-8">
         <div className="md:float-left block">
           <Link href='/'>
-            <span className="cursor-pointer font-bold text-4xl text-white">
+            <span className="cursor-pointer font-bold text-4xl text-black">
               Lifetiment
              </span>
           </Link>
@@ -25,7 +35,7 @@ const Header = () => {
         <div className="hidden md:float-left md:contents">
           {categories.map((category) => (
               <Link key={category.slug} href={`/category/${category.slug}`}>
-                <span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
+                <span className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 md:float-right mt-2 align-middle text-black ml-4 font-semibold cursor-pointer">
                   {category.name}
                 </span>
               </Link>

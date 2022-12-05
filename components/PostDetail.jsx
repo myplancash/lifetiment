@@ -59,7 +59,7 @@ const PostDetail = ({ post }) => {
         <div className="container mx-auto grid w-full mb-4 items-center">
           <div className="grid gap-6 mb-4 md:grid-cols-1 xl:grid-cols-1">
             <div className="flex items-center mb-4 lg:mb-0 w-full p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-              <div className="flex-none py-3 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
+              <div className="flex-none text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
                 <img 
                   src={post.author.photo.url}
                   alt={post.author.name}

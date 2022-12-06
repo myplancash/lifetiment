@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { getCategories } from '../services';
+import Image from 'next/image';
+import logo from '../assets/logo.svg';
 
 // hardcoding categories 
 /* const categories = [
@@ -23,13 +25,21 @@ const Header = () => {
 
 
   return (
-    <div className="container mx-auto mb-8 px-10">
-      <div className="border-b w-full inline-block border-blue-400 py-8">
+    <div className="container mx-auto mb-4 px-5">
+      <div className="border-b w-full inline-block border-black-400 py-8">
         <div className="md:float-left block">
           <Link href='/'>
-            <span className="cursor-pointer font-bold text-4xl text-black">
-              Lifetiment
-             </span>
+             <Image
+                unoptimized
+                src={logo}
+                alt='Picture of the Logo Brand"'
+                sizes="(min-width: 768px) 80vw,
+                (min-width: 1200px) 30vw,
+                13vw"
+                width={100}
+                height={1000}
+                className="align-middle drop-shadow-lg rounded-full hover:text-rose-400"
+              />
           </Link>
         </div>
         <div className="hidden md:float-left md:contents">

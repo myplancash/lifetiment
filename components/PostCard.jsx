@@ -6,7 +6,7 @@ const PostCard = ({ post }) => {
 
   return (
     /* (-) pb-12 lg:p-8 */
-    <div className='bg-white shadow-lg rounded-lg p-0 mb-8  pb-12 lg:p-8'>
+    <div className='bg-slate-500/[.06] shadow-lg rounded-lg p-0 mb-8  pb-12 lg:p-8'>
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
         <img 
           className='object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg' 

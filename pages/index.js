@@ -22,7 +22,7 @@ export default function Home({ posts }) {
   ] */
 
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="">
       <Head>
         <title>Lifetiment Blog</title>
         <link rel="icon" href="/favicon.ico" />

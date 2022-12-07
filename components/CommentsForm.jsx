@@ -129,7 +129,7 @@ const CommentsForm = ({ slug }) => {
         /> */}
         <textarea 
           ref={commentEl} 
-          className='border-solid border-2 border-indigo-600 p-4 text-black outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100' 
+          className='border-solid border-2 border-black p-4 text-black outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100' 
           name="comment" 
           id=""
           placeholder='Comment'
@@ -143,7 +143,7 @@ const CommentsForm = ({ slug }) => {
         <input 
           type="text" 
           ref={nameEl}
-          className="border-solid border-2 border-indigo-600 py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" 
+          className="border-solid border-2 border-black py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" 
           placeholder="Name"
           name="name" 
         />
@@ -151,7 +151,7 @@ const CommentsForm = ({ slug }) => {
           type="email" 
           ref={emailEl}
           name="email" 
-          className="border-solid border-2 border-indigo-600 py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" 
+          className="border-solid border-2 border-black py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700" 
           placeholder="Email" 
         />
       </div>

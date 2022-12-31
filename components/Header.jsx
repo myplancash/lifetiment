@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { getCategories } from '../services';;
 import Image from 'next/image'
+import Container from './Container';
 
 // hardcoding categories 
 /* const categories = [
@@ -24,7 +25,7 @@ const Header = () => {
 
 
   return (
-    <nav className="flex items-center justify-between flex-wrap p-6 mb-8 bg-blue sticky top-0 z-10">
+    <header className="flex items-center justify-between flex-wrap p-6 mb-8 bg-blue sticky top-0 z-10">
         <Link href='/'>
           <div className="flex items-center flex-shrink-0 text-white mr-6">
           <Image src="/logo.svg" alt="me" width="54" height="54" />
@@ -55,7 +56,7 @@ const Header = () => {
           </div>
         </div>
     </div>
-  </nav>
+  </header>
    )
 }
     {/* <div className="container mx-auto mb-4 px-5">

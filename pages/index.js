@@ -1,7 +1,7 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { PostCard, Categories, PostWidget } from '../components'
+import { PostCard, Categories, PostWidget, Footer } from '../components'
 import { getPosts } from '../services';
 import { FeaturedPosts } from '../sections'
 
@@ -32,7 +32,7 @@ export default function Home({ posts }) {
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post) => (
             <PostCard key={post.title} post={post.node} />
-          ))}
+          )).filter((_, index) => index < 3)}
         </div>
         <div className="lg:col-span-4 col-span-1">
             <div className="lg:sticky relative top-8">
@@ -41,6 +41,7 @@ export default function Home({ posts }) {
             </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { FeaturedPostCard } from '../components';
 import { getFeaturedPosts } from '../services';
 
-const responsive = {
+/* const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1024 },
     items: 5,
@@ -22,7 +22,7 @@ const responsive = {
     breakpoint: { max: 640, min: 0 },
     items: 1,
   },
-};
+}; */
 
 const FeaturedPosts = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
       setDataLoaded(true);
     });
   }, []);
-
+/* 
   const customLeftArrow = (
     <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -49,16 +49,72 @@ const FeaturedPosts = () => {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
       </svg>
     </div>
-  );
+  ); */
 
   return (
     <div className="mb-8">
-      <Carousel 
+      {/* <Carousel 
         infinite 
         customLeftArrow={customLeftArrow} 
         customRightArrow={customRightArrow} 
         responsive={responsive} 
         itemClass="px-4"
+      > */}
+      <Carousel
+        className='z-20'
+        /* customLeftArrow={customLeftArrow}
+        customRightArrow={customRightArrow} */
+        additionalTransfrom={0}
+        arrows
+        containerClass="container-with-dots"
+        autoPlaySpeed={3000}
+        centerMode={false}
+        containerClass="container-with-dots"
+        dotListClass=""
+        draggable
+        focusOnSelect={false}
+        infinite
+        itemClass=""
+        keyBoardControl
+        minimumTouchDrag={80}
+        pauseOnHover
+        renderArrowsWhenDisabled={false}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={{
+          desktop: {
+            breakpoint: {
+              max: 3000,
+              min: 1024
+            },
+            items: 3,
+            partialVisibilityGutter: 40
+          },
+          mobile: {
+            breakpoint: {
+              max: 464,
+              min: 0
+            },
+            items: 1,
+            partialVisibilityGutter: 30
+          },
+          tablet: {
+            breakpoint: {
+              max: 1024,
+              min: 464
+            },
+            items: 2,
+            partialVisibilityGutter: 30
+          }
+        }}
+        rewind={false}
+        rewindWithAnimation={false}
+        rtl={false}
+        shouldResetAutoplay
+        showDots={false}
+        sliderClass=""
+        slidesToSlide={1}
+        swipeable
       >
         {dataLoaded && featuredPosts.map((post, index) => (
           <FeaturedPostCard key={index} post={post} />

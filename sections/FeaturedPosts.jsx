@@ -61,7 +61,6 @@ const FeaturedPosts = () => {
         itemClass="px-4"
       > */}
       <Carousel
-        className='z-20'
         /* customLeftArrow={customLeftArrow}
         customRightArrow={customRightArrow} */
         additionalTransfrom={0}
@@ -69,7 +68,6 @@ const FeaturedPosts = () => {
         containerClass="container-with-dots"
         autoPlaySpeed={3000}
         centerMode={false}
-        containerClass="container-with-dots"
         dotListClass=""
         draggable
         focusOnSelect={false}

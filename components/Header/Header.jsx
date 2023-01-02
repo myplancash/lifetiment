@@ -29,9 +29,9 @@ const Header = () => {
       <HeaderContainer>
         <Link href='/'>
           <div className="flex items-center flex-shrink-0 text-white mr-6">
-            <Image src="/logo.svg" alt="me" width="54" height="54" />
+            <Image src="/logo.svg" alt="me" width="44" height="44" />
             <HeaderTitle>  
-              <span className="font-bold text-xl tracking-wider"> Life<span className='font-normal'>timent</span></span>
+              <span className="font-bold text-xl tracking-wider">{' '} Life<span className='font-normal'>timent</span></span>
             </HeaderTitle>
           </div>
       </Link>
@@ -39,7 +39,9 @@ const Header = () => {
         <li>
           {categories.map((category) => (
               <Link key={category.slug} href={`/category/${category.slug}`}>
-                  {category.name}
+                {' '}
+                {category.name}
+                {' '}
               </Link>
             ))}
         </li>

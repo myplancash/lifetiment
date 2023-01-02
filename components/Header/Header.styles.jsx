@@ -52,9 +52,13 @@ export const HeaderLinks = styled.ul`
   }
 
   li {
-    
-    color: white;
-
+    display: flex;
+    gap: 1.5rem;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFDFA;
+    padding-right: .8rem; 
     margin: 0 .8rem;
     cursor: pointer;
 
@@ -63,12 +67,18 @@ export const HeaderLinks = styled.ul`
     }
 
     &:last-child {
-      margin-right: 0;
+      margin-left: 0.8rem;
     }
 
   }
-
+  
   a {
-    color: $color-header-links;
+    color: #FFFDFA;
+    text-decoration: hidden;
+    transition: text-decoration .5s;
   }
+  
+    a:hover {
+      text-decoration: underline wavy #F27168;
+    }
 `

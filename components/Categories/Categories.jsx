@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getCategories } from '../services';
+import { getCategories } from '../../services';
+import { CategoriesStyles, CategorySpan } from './Categories.styles';
+
 
 const Categories = () => {
 
@@ -12,19 +14,19 @@ const Categories = () => {
   }, [])
  
   return (
-    <div className='bg-slate-500/[.06] shadow-lg rounded-lg p-8 mb-8'>
+    <CategoriesStyles>
       <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
         Categories
       </h3>
 
       {categories.map((category) => (
         <Link key={category.slug} href={`/category/${category.slug}`}>
-          <span className='cursor-pointer block pb-3 mb-3'>
+          <CategorySpan>
             {category.name}
-          </span>
+          </CategorySpan>
         </Link>
       ))}
-    </div>
+    </CategoriesStyles>
   )
 }
 

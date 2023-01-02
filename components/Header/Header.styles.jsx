@@ -36,3 +36,39 @@ export const HeaderTitle = styled.p`
     margin-bottom: .2em;
   }
 `
+
+export const HeaderLinks = styled.ul`
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 2em;
+
+  @media (max-width: 720px) {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    order: 3;
+    margin: 0;
+  }
+
+  li {
+    
+    color: white;
+
+    margin: 0 .8rem;
+    cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+  a {
+    color: $color-header-links;
+  }
+`

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import { getCategories } from '../services';;
+import { getCategories } from '../../services';
 import Image from 'next/image'
-import Container from './Container';
+import { HeaderStyles, HeaderContainer, HeaderTitle } from './Header.styles'
 
 // hardcoding categories 
 /* const categories = [
@@ -25,11 +25,14 @@ const Header = () => {
 
 
   return (
-    <header className="flex items-center justify-between flex-wrap p-6 mb-8 bg-blue sticky top-0 z-10">
+    <HeaderStyles className="flex items-center justify-between flex-wrap p-6 mb-8 bg-blue">
+      <HeaderContainer>
         <Link href='/'>
           <div className="flex items-center flex-shrink-0 text-white mr-6">
           <Image src="/logo.svg" alt="me" width="54" height="54" />
-          <span className="font-bold text-xl tracking-wider">   Life<span className='font-normal'>timent</span></span>
+          <HeaderTitle>  
+            <span className="font-bold text-xl tracking-wider"> Life<span className='font-normal'>timent</span></span>
+          </HeaderTitle>
         </div>
       </Link>
       <div className="block lg:hidden">
@@ -56,7 +59,8 @@ const Header = () => {
           </div>
         </div>
     </div>
-  </header>
+    </HeaderContainer>
+  </HeaderStyles>
    )
 }
     {/* <div className="container mx-auto mb-4 px-5">

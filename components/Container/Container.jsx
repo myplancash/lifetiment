@@ -8,9 +8,9 @@ const Container = ({ children, className, ...rest }) => {
   }
 
   return (
-    <div className={containerStyles} {...rest}>
+    <ContainerStyles className={containerStyles} {...rest}>
       {children}
-    </div>
+    </ContainerStyles>
   )
 }
 

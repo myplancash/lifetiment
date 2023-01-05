@@ -15,7 +15,7 @@ const Categories = () => {
  
   return (
     <CategoriesStyles>
-      <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
+      <h3 className='text-xl mb-8 font-semibold border-b-2 pb-4'>
         Categories
       </h3>
 

@@ -24,6 +24,14 @@ import { getFeaturedPosts } from '../services';
   },
 }; */
 
+const carouselStyles = {
+  container: {
+    'zIndex': '-1'
+  },
+  item: {
+    'zIndex': '-1'
+  }
+}
 const FeaturedPosts = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -65,14 +73,17 @@ const FeaturedPosts = () => {
         customRightArrow={customRightArrow} */
         additionalTransfrom={0}
         arrows
-        containerClass="container-with-dots"
+        containerClass={carouselStyles.container}
+        itemClass={carouselStyles.item}
         autoPlaySpeed={3000}
         centerMode={false}
+        swipeable={false}
+        draggable={false}
         dotListClass=""
-        draggable
         focusOnSelect={false}
         infinite
-        itemClass=""
+        customTransition="all .5"
+        removeArrowOnDeviceType={["tablet", "mobile"]}
         keyBoardControl
         minimumTouchDrag={80}
         pauseOnHover

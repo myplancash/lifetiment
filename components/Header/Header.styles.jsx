@@ -1,17 +1,23 @@
 import styled from 'styled-components';
-import Container from '../Container/Container';
+// import Container from '../Container/Container';
 
 export const HeaderStyles = styled.header`
   width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-size: 1.2em;
   color: white;
   padding: 1em 0;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 20;
 `
 
-export const HeaderContainer = styled(Container)`
+export const HeaderContainer = styled.div`
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 1em;
+  margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +33,7 @@ export const HeaderTitle = styled.p`
   flex-grow: 1;
   font-size: 1.3em;
   font-weight: $font-weight-black;
-  margin: 0;
+  margin-left: .2em;
 
   @media (max-width: 720px) {
     order: 1;

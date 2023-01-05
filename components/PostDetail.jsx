@@ -57,9 +57,9 @@ const PostDetail = ({ post }) => {
       
       <main className="px-4 lg:px-0 h-full overflow-y-auto">
         <div className="container mx-auto grid w-full mb-4 items-center">
-          <div className="grid gap-6 mb-4 md:grid-cols-1 xl:grid-cols-1">
-            <div className="flex items-center mb-4 lg:mb-0 w-full p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-              <div className="flex-none text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
+          <div className="grid gap-6 mb-4 md:grid-cols-1 xl:grid-cols-1 items-center lg:mb-0 w-full p-4 bg-white rounded-lg shadow-xs">
+            <div className="flex items-center mb-4 lg:mb-0 w-full p-4 bg-white rounded-lg shadow-xs border-b-2">
+              <div className="flex-none text-pink-500 bg-pink-100 rounded-full dark:text-pink-100 dark:bg-pink-500">
                 <img 
                   src={post.author.photo.url}
                   alt={post.author.name}
@@ -82,7 +82,7 @@ const PostDetail = ({ post }) => {
               </div>
             </div>
             <h1 className='mb-8 text-3xl font-semibold'>{post.title}</h1>
-            {/* console.log(post.content.raw) */}
+            
             {post.content.raw.children.map((typeObj, index) => {
               const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
 
@@ -91,8 +91,34 @@ const PostDetail = ({ post }) => {
           </div>
         </div>
       </main>
-    </div>
+    </div> 
   )
 }
+    {/* <div className="max-w-screen-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-screen-2xl">
+      <div className="md:flex">
+        <div className="md:shrink-0 overflow-hidden shadow-md mb-6">
+          <img
+            src={post.featuredImage.url} 
+            alt={post.title} 
+            className='h-full w-full object-top md:h-full md:w-48 rounded-t-lg' //object-top h-full w-full
+          />
+        </div>
+        <main className="px-4 lg:px-0 h-full overflow-y-auto p-8">
+          <div className='container mx-auto grid w-full mb-4 items-center'>
+            <div className="grid gap-6 mb-4 md:grid-cols-1 xl:grid-cols-1">
+            <div className="flex items-center mb-4 lg:mb-0 w-full p-4 bg-white rounded-lg shadow-xs border-b-2">
+
+            
+             
+              <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Company retreats</div>
+              <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Incredible for your team</a>
+              <p className="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.</p>
+            </div>
+            </div>
+            </div>
+        </main>
+      </div>
+    </div> */}
+
 
 export default PostDetail;

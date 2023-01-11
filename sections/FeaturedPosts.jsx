@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import { FeaturedPostCard } from '../components';
+import FeaturedPostCard  from '../components/FeaturedPostCard/FeaturedPostCard';
 import { getFeaturedPosts } from '../services';
 
 /* const responsive = {
@@ -77,7 +77,7 @@ const FeaturedPosts = () => {
         itemClass={carouselStyles.item}
         autoPlaySpeed={3000}
         centerMode={false}
-        swipeable={false}
+        swipeable
         draggable={false}
         dotListClass=""
         focusOnSelect={false}
@@ -123,7 +123,7 @@ const FeaturedPosts = () => {
         showDots={false}
         sliderClass=""
         slidesToSlide={1}
-        swipeable
+        
       >
         {dataLoaded && featuredPosts.map((post, index) => (
           <FeaturedPostCard key={index} post={post} />

@@ -7,7 +7,7 @@ const Footer = () => {
         .footer {
           width: 100%;
           color: white;
-          background-color:#00539C;
+          background-color: #1803A5;
           display: flex;
           justify-content: center;
           align-items: center;

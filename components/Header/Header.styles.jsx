@@ -5,10 +5,10 @@ export const HeaderStyles = styled.header`
   width: 100%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-size: 1.2em;
-  color: #CBD2FF;
+  color: #F2EC9B;
   padding: 1em 0;
   position: sticky;
-  background-color: #04072D;
+  background-color: #1803A5;//#04072D;
   top: 0;
   z-index: 20;
 `
@@ -64,7 +64,7 @@ export const HeaderLinks = styled.ul`
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    color: #CBD2FF;
+    color: #F2EC9B;
     padding-right: .8rem; 
     margin: 0 .8rem;
     cursor: pointer;
@@ -80,12 +80,12 @@ export const HeaderLinks = styled.ul`
   }
   
   a {
-    color: #CBD2FF;
+    color: #F2EC9B;
     text-decoration: hidden;
     transition: text-decoration .5s;
   }
   
     a:hover {
-      text-decoration: underline wavy #F27168;
+      text-decoration: underline wavy #96FFBD;
     }
 `
